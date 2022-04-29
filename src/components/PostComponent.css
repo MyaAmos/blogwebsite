@@ -36,3 +36,10 @@
 .delete-post{
     float: right;
 }
+.comment-label{
+    float: left;
+}
+
+.comment-form{
+    margin-bottom: 15px;
+}

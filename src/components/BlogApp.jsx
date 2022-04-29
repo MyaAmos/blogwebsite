@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-do
 import HomeComponent from "./HomeComponent";
 import LoginComponent from "./LoginComponent";
 import CreatePostComponent from "./CreatePostComponent";
-import SidebarComponent from "./SideBarComponent";
+import ProfileComponent from "./ProfileComponent";
 import withNavigation from "./WithNavigation";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
@@ -35,19 +35,25 @@ class BlogApp extends Component {
   render() {
     const LoginComponentWithNav = withNavigation(LoginComponent);
     const CreatePostWithNav = withNavigation(CreatePostComponent);
+    const ProfileComponentWithNav = withNavigation(ProfileComponent);
 
     return (
       <div className="App">
         <Router>
 
           <nav className="navbar navbar-expand-md navbar-light  navi-bar sticky-top">
-            <h4 className="app-title">Blog App</h4>
+            <span class="navbar-brand mb-0 h1">Blog</span>
             <ul className="navbar-nav">
               <li>
                 <NavLink className="nav-link" to="/">
                   Home
                 </NavLink>
               </li>
+              {this.state.isAuth && <li>
+                <NavLink className="nav-link" to="/profile">
+                  Profile
+                </NavLink>
+              </li>}
               {this.state.isAuth && <li>
                 <NavLink className="nav-link" to="/createpost">
                   Create Post
@@ -81,6 +87,7 @@ class BlogApp extends Component {
               element={<LoginComponentWithNav loginAuth={this.loginAuth} />}
             />
             <Route path="/createpost" element={<CreatePostWithNav />} />
+            <Route path="/profile" element={<ProfileComponentWithNav />} />
             <Route path="/*" element={<ErrorComponent />} />
           </Routes>
         </Router>

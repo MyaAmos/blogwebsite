@@ -1,19 +1,19 @@
 import { Component } from "react";
 import "./PostComponent.css";
 import { auth } from "../firebase-config";
+import { Field } from "formik";
 
 class PostComponent extends Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props){
-        super(props);
+    this.deleteDoc = this.deleteDoc.bind(this);
+  }
 
-        this.deleteDoc = this.deleteDoc.bind(this);
-    }
-
-    deleteDoc(){
-        console.log("Delete " + this.props.id);
-        this.props.deleteDoc(this.props.id);
-    }
+  deleteDoc() {
+    console.log("Delete " + this.props.id);
+    this.props.deleteDoc(this.props.id);
+  }
 
   render() {
     return (
@@ -22,15 +22,27 @@ class PostComponent extends Component {
           <div className="post-title">
             <h4>{this.props.title}</h4>
           </div>
-          {this.props.isAuth && this.props.authorId === auth.currentUser.uid && <div className="delete-post">
-            <button className="btn btn-light" onClick={this.deleteDoc}>&#128465;</button>
-          </div>}
+          {this.props.isAuth && this.props.authorId === auth.currentUser.uid && (
+            <div className="delete-post">
+              <button className="btn btn-light" onClick={this.deleteDoc}>
+                &#128465;
+              </button>
+            </div>
+          )}
         </div>
         <div>
           <p className="post-body">{this.props.body}</p>
         </div>
         <div className="post-author">
           <p>@{this.props.authorName}</p>
+        </div>
+        <div className="comment-form">
+          <form>
+            <div className="form-group">
+              <label className="comment-label" for="commentTextArea" >Comment: </label>
+              <textarea class="form-control" id="commentTextArea" rows="2"></textarea>
+            </div>
+          </form>
         </div>
         <div>
           <button className="btn btn-info">See comments...</button>
