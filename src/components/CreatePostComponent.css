@@ -1,0 +1,35 @@
+.post-form{
+    color: black;
+    max-width: 50%;
+    margin-top: 25px;
+    padding: 15px;
+    background-color: lightgrey;
+    border-radius: 15px;
+}
+
+.title-form-group{
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.post-form-group{
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.post-btn{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.title-label{
+    float: left;
+}
+
+.post-label{
+    float: left;
+}
+
+.text-area-input{
+    height: 300px;
+}

@@ -1,0 +1,36 @@
+.post{
+    width: 600px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 20px;
+    height: auto;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, .24);
+}
+
+.post-header{
+    text-align: left;
+    margin-top: 10px;
+}
+
+.post-body{
+    text-align: left;
+    margin-top: 20px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.post-author{
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-title{
+    display: inline-block;
+}
+
+.delete-post{
+    float: right;
+}
