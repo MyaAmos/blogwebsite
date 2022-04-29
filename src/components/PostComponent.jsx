@@ -39,8 +39,8 @@ class PostComponent extends Component {
         <div className="comment-form">
           <form>
             <div className="form-group">
-              <label className="comment-label" for="commentTextArea" >Comment: </label>
-              <textarea class="form-control" id="commentTextArea" rows="2"></textarea>
+              <label className="comment-label" >Comment: </label>
+              <textarea className="form-control" id="commentTextArea" rows="2"></textarea>
             </div>
           </form>
         </div>

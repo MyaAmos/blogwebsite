@@ -42,7 +42,7 @@ class BlogApp extends Component {
         <Router>
 
           <nav className="navbar navbar-expand-md navbar-light  navi-bar sticky-top">
-            <span class="navbar-brand mb-0 h1">Blog</span>
+            <span className="navbar-brand mb-0 h1">Blog</span>
             <ul className="navbar-nav">
               <li>
                 <NavLink className="nav-link" to="/">

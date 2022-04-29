@@ -31,7 +31,6 @@ class HomeComponent extends Component {
       this.setState({
         postList: data.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
       });
-      console.log(this.state.postList);
     };
 
     getPosts();
