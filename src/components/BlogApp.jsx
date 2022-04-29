@@ -40,7 +40,7 @@ class BlogApp extends Component {
       <div className="App">
         <Router>
 
-          <nav className="navbar navbar-expand-md navbar-dark bg-dark navi-bar sticky-top">
+          <nav className="navbar navbar-expand-md navbar-light  navi-bar sticky-top">
             <h4 className="app-title">Blog App</h4>
             <ul className="navbar-nav">
               <li>
@@ -71,6 +71,8 @@ class BlogApp extends Component {
               )}
             </ul>
           </nav>
+
+
 
           <Routes>
             <Route path="/" element={<HomeComponent isAuth={this.state.isAuth}/>} />
